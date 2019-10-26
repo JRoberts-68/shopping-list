@@ -1,4 +1,4 @@
-const STORE = {
+const store = {
     items: [
         {id :cuid(), name: 'apples', checked : false},
         {id :cuid(), name: 'oranges', checked: false},
@@ -32,8 +32,8 @@ const generateItemElement = function(item) {
   };
 
   const render = function () {
-      let items = [...STORE.items];
-      if (STORE.hideCheckedItems) {
+      let items = [...store.items];
+      if (store.hideCheckedItems) {
           items = items.filter(item => !item.checked);
       }
       const shoppingListItemsString = genShoppingItemString(items);
@@ -41,7 +41,7 @@ const generateItemElement = function(item) {
   };
 
   const addItemToShoppingList = function (itemName) {
-      STORE.items.push({id: cuid(), name: itemName, checked: false});
+      store.items.push({id: cuid(), name: itemName, checked: false});
 
   };
 
